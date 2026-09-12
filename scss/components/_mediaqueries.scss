@@ -1,10 +1,26 @@
+@media screen and (min-width: 576px) {
+  .svg__image {
+    max-width: 100%;
+  }
+  .home {
+    padding-top: 7rem;
+    &__container {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+
+    &__image {
+      order: 1;
+    }
+  }
+}
 @media screen and (min-width: 767px) {
   .nav {
     &__list {
       flex-direction: row;
       column-gap: 2.5rem;
     }
-    
+
     &__toggle {
       display: none;
     }
@@ -28,8 +44,11 @@
   .container {
     width: 95vw;
   }
+  .svg__image {
+    max-width: 500px;
+  }
   .button__header {
-      display: block;
-      padding: 0.3rem 1.5rem;
-    }
+    display: block;
+    padding: 0.3rem 1.5rem;
+  }
 }
