@@ -1,6 +1,12 @@
 // Variables
-@import "./config/variables";
+@use "./config/variables";
 // Base
-@import "./base/base";
+@use "./base/base";
+// Layout
+@use "./layout/layout";
+// Button
+@use "./components/button";
+// Header
+@use "./components/header";
 // MediaQueries
-@import "./components/mediaqueries";
+@use "./components/mediaqueries";
