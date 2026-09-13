@@ -31,16 +31,14 @@
 
   .home,
   .about,
-  .support {
-    
+  .support,
+  .services {
     &__container {
       grid-template-columns: 1fr 1fr;
       align-items: center;
       column-gap: 4rem;
     }
   }
-
-  
 }
 @media screen and (min-width: 767px) {
   .nav {
@@ -78,5 +76,15 @@
   .button__header {
     display: block;
     padding: 0.3rem 1.5rem;
+  }
+  .home,
+  .about,
+  .support {
+    column-gap: 6rem;
+  }
+  .services {
+    &__container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }

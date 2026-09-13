@@ -23,6 +23,12 @@
 .bi-toggle-off::before {
   content: "\f5d5";
 }
+.bi-browser-chrome::before {
+  content: "\f7d4";
+}
+
+
+
 
 .bi-123::before {
   content: "\f67f";
@@ -5262,9 +5268,7 @@
 .bi-box-seam-fill::before {
   content: "\f7d3";
 }
-.bi-browser-chrome::before {
-  content: "\f7d4";
-}
+
 .bi-browser-edge::before {
   content: "\f7d5";
 }
