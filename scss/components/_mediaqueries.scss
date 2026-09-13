@@ -19,7 +19,19 @@
     }
   }
 
-  .home,.about {
+  .support {
+    &__image {
+      order: 1;
+    }
+
+    &__info {
+      text-align: right;
+    }
+  }
+
+  .home,
+  .about,
+  .support {
     
     &__container {
       grid-template-columns: 1fr 1fr;
