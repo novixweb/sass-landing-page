@@ -41,6 +41,10 @@
 .bi-instagram::before {
   content: "\f437";
 }
+.bi-arrow-up::before {
+  content: "\f148";
+}
+
 
 
 
@@ -260,9 +264,7 @@
 .bi-arrow-up-square::before {
   content: "\f147";
 }
-.bi-arrow-up::before {
-  content: "\f148";
-}
+
 .bi-arrows-angle-contract::before {
   content: "\f149";
 }

@@ -49,9 +49,21 @@ function scrollActive() {
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       navLink.classList.add("active-link");
     } else {
-      document
-        navLink.classList.remove("active-link");
+      document;
+      navLink.classList.remove("active-link");
     }
   });
 }
 window.addEventListener("scroll", scrollActive);
+
+//show scroll up
+function scrollUp() {
+  const scrollUp = document.getElementById('scroll-up');
+  if (window.scrollY >= 560) {
+    scrollUp.classList.add('show-scroll');
+  } else {
+    scrollUp.classList.remove('show-scroll');
+  }
+}
+window.addEventListener('scroll', scrollUp);
+
