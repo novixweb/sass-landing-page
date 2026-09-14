@@ -26,7 +26,12 @@
 .bi-browser-chrome::before {
   content: "\f7d4";
 }
-
+.bi-apple::before {
+  content: "\f65b";
+}
+.bi-google-play::before {
+  content: "\f7f7";
+}
 
 
 
@@ -4140,9 +4145,7 @@
 .bi-safe::before {
   content: "\f65a";
 }
-.bi-apple::before {
-  content: "\f65b";
-}
+
 .bi-microsoft::before {
   content: "\f65d";
 }
@@ -5371,9 +5374,7 @@
 .bi-fire::before {
   content: "\f7f6";
 }
-.bi-google-play::before {
-  content: "\f7f7";
-}
+
 .bi-h-circle-1::before {
   content: "\f7f8";
 }

@@ -9,12 +9,14 @@
     }
   }
 
-  .about {
+  .about,
+  .app {
     &__image {
       order: -1;
     }
 
-    &__info {
+    &__info,
+    &__title {
       text-align: right;
     }
   }
@@ -32,7 +34,8 @@
   .home,
   .about,
   .support,
-  .services {
+  .services,
+  .app {
     &__container {
       grid-template-columns: 1fr 1fr;
       align-items: center;
@@ -49,6 +52,12 @@
 
     &__toggle {
       display: none;
+    }
+  }
+
+  .app {
+    &__buttons {
+      justify-content: start;
     }
   }
 }
@@ -79,8 +88,11 @@
   }
   .home,
   .about,
-  .support {
-    column-gap: 6rem;
+  .support,
+  .app {
+    &__container {
+      column-gap: 6rem;
+    }
   }
   .services {
     &__container {
