@@ -32,6 +32,15 @@
 .bi-google-play::before {
   content: "\f7f7";
 }
+.bi-telegram::before {
+  content: "\f5b3";
+}
+.bi-twitter::before {
+  content: "\f5ef";
+}
+.bi-instagram::before {
+  content: "\f437";
+}
 
 
 
@@ -2504,9 +2513,7 @@
 .bi-input-cursor::before {
   content: "\f436";
 }
-.bi-instagram::before {
-  content: "\f437";
-}
+
 .bi-intersect::before {
   content: "\f438";
 }
@@ -3644,9 +3651,7 @@
 .bi-tags::before {
   content: "\f5b2";
 }
-.bi-telegram::before {
-  content: "\f5b3";
-}
+
 .bi-telephone-fill::before {
   content: "\f5b4";
 }
@@ -3821,9 +3826,7 @@
 .bi-twitch::before {
   content: "\f5ee";
 }
-.bi-twitter::before {
-  content: "\f5ef";
-}
+
 .bi-type-bold::before {
   content: "\f5f0";
 }

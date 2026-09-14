@@ -44,6 +44,12 @@
     }
   }
 
+  .footer {
+    &__container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   .contact {
     &__container {
       article:nth-child(3) {
@@ -77,6 +83,11 @@
       justify-content: start;
     }
   }
+  .footer {
+    &__container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -91,6 +102,7 @@
   h4 {
     font-size: 1rem;
   }
+  
 }
 @media screen and (min-width: 992px) {
   .container {
@@ -113,7 +125,19 @@
   }
   .services {
     &__container {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .footer {
+    &__container {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__social {
+      &-link {
+        font-size: 1.4rem;
+      }
     }
   }
 
