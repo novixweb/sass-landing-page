@@ -17,6 +17,27 @@
   --ff-primary: "vazir", sans-serif;
 }
 
+body.dark-theme {
+  --primary-color-light: hsl(var(--hue), var(--set), 75%);
+  --title-color: hsl(var(--hue), 4%, 95%);
+  --text-color: hsl(var(--hue), 4%, 91%);
+  --body-color: hsl(var(--hue), 8%, 13%);
+  --container-color: hsl(var(--hue), 8%, 16%);
+}
+
+.chenge-theme {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.9rem;
+  color: var(--title-color);
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.dark-theme .footer {
+  background: var(--container-color);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -217,6 +238,7 @@ h4 {
 }
 .home__description {
   margin-bottom: 2rem;
+  color: var(--text-color);
 }
 
 .about__container {
@@ -225,12 +247,18 @@ h4 {
 .about__info {
   text-align: center;
 }
+.about__description {
+  color: var(--text-color);
+}
 
 .support__container {
   gap: 2rem;
 }
 .support__info {
   text-align: center;
+}
+.support__description {
+  color: var(--text-color);
 }
 
 .services__container {
@@ -249,6 +277,9 @@ h4 {
   font-size: 3rem;
   color: var(--primary-color);
 }
+.services__description {
+  color: var(--text-color);
+}
 
 .app__container {
   gap: 2.5rem;
@@ -258,6 +289,7 @@ h4 {
 }
 .app__description {
   margin-bottom: 1.5rem;
+  color: var(--text-color);
 }
 .app__buttons {
   display: grid;
@@ -274,6 +306,7 @@ h4 {
 }
 .contact__description {
   text-align: center;
+  color: var(--text-color);
 }
 .contact__info {
   display: grid;
@@ -310,6 +343,7 @@ h4 {
 }
 .footer__description, .footer__link {
   font-size: 0.9rem;
+  color: var(--text-color);
 }
 .footer__link {
   color: var(--title-color);
@@ -415,6 +449,12 @@ h4 {
   }
   .nav__toggle {
     display: none;
+  }
+  .chenge-theme {
+    position: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .app__buttons {
     justify-content: start;

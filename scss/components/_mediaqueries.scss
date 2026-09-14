@@ -64,6 +64,7 @@
   .app__description,
   .contact__title {
     text-align: right;
+    
   }
 }
 @media screen and (min-width: 767px) {
@@ -76,6 +77,13 @@
     &__toggle {
       display: none;
     }
+  }
+
+  .chenge-theme {
+    position: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .app {

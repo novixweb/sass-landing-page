@@ -44,6 +44,9 @@
 .bi-arrow-up::before {
   content: "\f148";
 }
+.bi-toggle-on::before {
+  content: "\f5d6";
+}
 
 
 
@@ -3753,9 +3756,7 @@
 .bi-three-dots::before {
   content: "\f5d4";
 }
-.bi-toggle-on::before {
-  content: "\f5d6";
-}
+
 .bi-toggle2-off::before {
   content: "\f5d7";
 }

@@ -1,0 +1,20 @@
+body.dark-theme {
+    --primary-color-light: hsl(var(--hue), var(--set), 75%);
+    --title-color: hsl(var(--hue), 4%, 95%);
+    --text-color: hsl(var(--hue), 4%, 91%);
+    --body-color: hsl(var(--hue), 8%, 13%);
+    --container-color: hsl(var(--hue), 8%, 16%);
+}
+
+.chenge-theme {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.9rem;
+    color: var(--title-color);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.dark-theme .footer {
+    background: var(--container-color);
+}
