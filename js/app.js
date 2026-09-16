@@ -1,93 +1,110 @@
-const navMenu = document.querySelector("#nav-menu");
-const navToggle = document.querySelector("#nav-toggle");
-const navLink = document.querySelectorAll(".nav__link");
+// ==================== Navigation Menu ====================
 
-// show nav
-navToggle.addEventListener("click", function () {
-  navMenu.classList.toggle("show-menu");
+const navMenu = document.querySelector('#nav-menu');
+const navToggle = document.querySelector('#nav-toggle');
+const navLink = document.querySelectorAll('.nav__link');
+
+// Show / hide mobile menu
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show-menu');
 });
 
-document.addEventListener("click", function (event) {
-  if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
-    navMenu.classList.remove("show-menu");
-  }
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navMenu.contains(e.target) && !navToggle.contains(e.target))
+    navMenu.classList.remove('show-menu');
 });
 
-// Chenge background header
+// ==================== Header on Scroll ====================
+
+// Change header background when scrolling
 function scrollHeader() {
-  const nav = document.getElementById("header__navbar");
-  if (this.scrollY >= 80) nav.classList.add("scroll-header");
-  else nav.classList.remove("scroll-header");
+  const nav = document.getElementById('header__navbar');
+  nav.classList.toggle('scroll-header', this.scrollY >= 80);
 }
-window.addEventListener("scroll", scrollHeader);
 
-// remove menu
-function linkAction() {
-  navMenu.classList.remove("show-menu");
-}
-navLink.forEach((n) => {
-  n.addEventListener("click", linkAction);
-});
+window.addEventListener('scroll', scrollHeader);
 
-// scroll section active link
-const sections = document.querySelectorAll("section[id]");
+// ==================== Close Menu ====================
+
+// Close mobile menu after clicking a link
+const linkAction = () => navMenu.classList.remove('show-menu');
+
+navLink.forEach((n) => n.addEventListener('click', linkAction));
+
+// ==================== Active Navigation Link ====================
+
+// Highlight the current section in navigation
+const sections = document.querySelectorAll('section[id]');
 
 function scrollActive() {
   const scrollY = window.scrollY;
 
   sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 50,
-      sectionId = current.getAttribute("id");
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    const sectionId = current.getAttribute('id');
 
     const navLink = document.querySelector(
-      '.nav__menu a[href="#' + sectionId + '"]',
+      `.nav__menu a[href='#${sectionId}']`,
     );
 
     if (!navLink) return;
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      navLink.classList.add("active-link");
-    } else {
-      document;
-      navLink.classList.remove("active-link");
-    }
+    navLink.classList.toggle(
+      'active-link',
+      scrollY > sectionTop && scrollY <= sectionTop + sectionHeight,
+    );
   });
 }
-window.addEventListener("scroll", scrollActive);
 
-//show scroll up
+window.addEventListener('scroll', scrollActive);
+
+// ==================== Scroll Up Button ====================
+
+// Show scroll-up button after scrolling down
 function scrollUp() {
   const scrollUp = document.getElementById('scroll-up');
-  if (window.scrollY >= 560) {
-    scrollUp.classList.add('show-scroll');
-  } else {
-    scrollUp.classList.remove('show-scroll');
-  }
+
+  scrollUp.classList.toggle('show-scroll', window.scrollY >= 560);
 }
+
 window.addEventListener('scroll', scrollUp);
 
-// dark and light theme
+// ==================== Dark / Light Theme ====================
+
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'bi-toggle-on';
 
-// previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
+// Get saved theme and icon
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
 
+// Get current theme
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? 'dark' : 'light';
 
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bi-toggle-off' : 'bi-toggle-on'
+// Get current icon
+const getCurrentIcon = () =>
+  themeButton.classList.contains(iconTheme) ? 'bi-toggle-off' : 'bi-toggle-on';
 
+// Apply saved theme
 if (selectedTheme) {
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'bi-toggle-off' ? 'add' : 'remove'](iconTheme)
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](
+    darkTheme,
+  );
+
+  themeButton.classList[selectedIcon === 'bi-toggle-off' ? 'add' : 'remove'](
+    iconTheme,
+  );
 }
 
+// Toggle theme
 themeButton.addEventListener('click', () => {
-  document.body.classList.toggle(darkTheme)
-  themeButton.classList.toggle(iconTheme)
-  localStorage.setItem('selected-theme', getCurrentTheme())
-  localStorage.setItem('selected-icon', getCurrentIcon())
-})
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+
+  localStorage.setItem('selected-theme', getCurrentTheme());
+  localStorage.setItem('selected-icon', getCurrentIcon());
+});
